@@ -15,8 +15,6 @@ namespace IEEEBadgeWriter
     {
         public static int Names;
 
-        public static int realX;
-        public static int realY;
         public static async Task LoadNames(string path)
         {
             int i = 0;
@@ -27,10 +25,7 @@ namespace IEEEBadgeWriter
                 Names++;
             }
         }
-        public static void RealResizer(int picwidth , int picheight , int originalwidth , int originalheight , double lablelocx , double labellocy)
-        {
-          
-        }
+
         public static async Task draw(string img , string text , string output , int x , int y , float size , string fontx)
         {
             SKBitmap bm = SKBitmap.Decode($@"{img}");

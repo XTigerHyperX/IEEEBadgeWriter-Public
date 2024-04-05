@@ -31,12 +31,12 @@ namespace IEEEBadgeWriter
         {
           
         }
-        public static async Task draw(string img , string text , string output , int x , int y , float size)
+        public static async Task draw(string img , string text , string output , int x , int y , float size , string fontx)
         {
             SKBitmap bm = SKBitmap.Decode($@"{img}");
             using (SKCanvas canvas = new SKCanvas(bm))
             {
-                SKTypeface font = SKTypeface.FromFile(@"C:\Users\xtige\Desktop\test\Montserrat-ExtraBold.ttf");
+                SKTypeface font = SKTypeface.FromFile(fontx);
 
 
                 SKPaint paint = new SKPaint

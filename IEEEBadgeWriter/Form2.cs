@@ -14,7 +14,7 @@ namespace IEEEBadgeWriter
         Image Loadedimg;
         string imgloc;
         string output;
-        string textpath;
+        string textpath , font;
         public Form2()
         {
             InitializeComponent();
@@ -61,6 +61,7 @@ namespace IEEEBadgeWriter
             PrivateFontCollection pfc = new PrivateFontCollection();
             pfc.AddFontFile(openFileDialog1.FileName);
             label2.Font = new Font(pfc.Families[0], 12, FontStyle.Regular);
+            font = openFileDialog1.FileName;
         }
 
         private void Output_Click(object sender, EventArgs e)
@@ -220,7 +221,7 @@ namespace IEEEBadgeWriter
             var lines = File.ReadLines(textpath);
             foreach (var line in lines)
             {
-                var thread = new Thread(async () => await Designer.draw(imgloc, line, output+"\\", adjx, adjy + 70, skiaPoints * 25));
+                var thread = new Thread(async () => await Designer.draw(imgloc, line, output+"\\", adjx, adjy + 70, skiaPoints * 25 , font));
                 thread.Start();
             }
         }

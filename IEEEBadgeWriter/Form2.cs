@@ -58,7 +58,7 @@ namespace IEEEBadgeWriter
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                Font_txtbox.Text = openFileDialog1.SafeFileName;
+                textBox3.Text = openFileDialog1.SafeFileName;
             }
             PrivateFontCollection pfc = new PrivateFontCollection();
             pfc.AddFontFile(openFileDialog1.FileName);

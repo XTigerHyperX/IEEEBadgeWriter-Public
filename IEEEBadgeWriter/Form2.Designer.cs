@@ -51,6 +51,7 @@
             button1 = new Button();
             button2 = new Button();
             label5 = new Label();
+            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             groupBox1.SuspendLayout();
@@ -277,12 +278,23 @@
             label5.TabIndex = 24;
             label5.Text = "Color :";
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(1192, 23);
+            label6.Name = "label6";
+            label6.Size = new Size(37, 15);
+            label6.TabIndex = 20;
+            label6.Text = "v0.0.1";
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(19, 19, 28);
             ClientSize = new Size(1256, 686);
+            Controls.Add(label6);
             Controls.Add(groupBox1);
             Controls.Add(Gen_btn);
             Controls.Add(Output_txtbox);
@@ -333,5 +345,6 @@
         private Button button1;
         private Button button2;
         private Label label5;
+        private Label label6;
     }
 }

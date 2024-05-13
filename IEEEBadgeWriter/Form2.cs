@@ -14,11 +14,13 @@ namespace IEEEBadgeWriter
         Image Loadedimg;
         string imgloc;
         string output;
-        string textpath , font;
+        string textpath, font;
+        public static string color;
         public Form2()
         {
             InitializeComponent();
             dragging = false;
+            color = "black";
         }
 
 
@@ -87,7 +89,7 @@ namespace IEEEBadgeWriter
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                Output_txtbox.Text = openFileDialog1.SafeFileName;
+                Textfile_txtbox.Text = openFileDialog1.SafeFileName;
                 await Designer.LoadNames(openFileDialog1.FileName);
                 Load_Text.Text = $"Loaded {Designer.Names} Name";
                 textpath = openFileDialog1.FileName;
@@ -206,11 +208,10 @@ namespace IEEEBadgeWriter
             float offsetY = (pictureBox2.Height - displayHeight) / 2;
 
             Point labelScreenCoords = label2.PointToScreen(Point.Empty);
-            Point labelRelativeToPictureBox = pictureBox2.PointToClient(labelScreenCoords);
+            Point labelRelativeToPicbox = pictureBox2.PointToClient(labelScreenCoords);
 
-
-            int adjx = (int)((labelRelativeToPictureBox.X - offsetX) / scaleFactor);
-            int adjy = (int)((labelRelativeToPictureBox.Y - offsetY) / scaleFactor);
+            int adjx = (int)((labelRelativeToPicbox.X - offsetX) / scaleFactor);
+            int adjy = (int)((labelRelativeToPicbox.Y - offsetY) / scaleFactor);
 
 
             Debug.WriteLine($"X : {adjx} Y : {adjy} ");
@@ -221,9 +222,22 @@ namespace IEEEBadgeWriter
             var lines = File.ReadLines(textpath);
             foreach (var line in lines)
             {
-                var thread = new Thread(async () => await Designer.draw(imgloc, line, output+"\\", adjx, adjy + 70, skiaPoints * 25 , font));
+                var thread = new Thread(async () => await Designer.draw(imgloc, line, output + "\\", adjx, adjy + 90, skiaPoints * 34, font));
                 thread.Start();
             }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            color = "black";
+            label2.ForeColor = System.Drawing.Color.Black;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            color = "white";
+            label2.ForeColor = System.Drawing.Color.White;
+
         }
     }
 }

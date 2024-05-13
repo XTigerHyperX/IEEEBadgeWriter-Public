@@ -48,6 +48,9 @@
             Plustext_btn = new Button();
             negativetxt_btn = new Button();
             groupBox1 = new GroupBox();
+            button1 = new Button();
+            button2 = new Button();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             groupBox1.SuspendLayout();
@@ -165,8 +168,9 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Gray;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
+            label2.ForeColor = Color.Black;
             label2.Location = new Point(83, 580);
             label2.Name = "label2";
             label2.Size = new Size(81, 21);
@@ -226,6 +230,9 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(button2);
+            groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(negativetxt_btn);
             groupBox1.Controls.Add(Plustext_btn);
             groupBox1.Controls.Add(label4);
@@ -238,6 +245,37 @@
             groupBox1.TabIndex = 19;
             groupBox1.TabStop = false;
             groupBox1.Text = "Customize Text";
+            // 
+            // button1
+            // 
+            button1.ForeColor = Color.Black;
+            button1.Location = new Point(109, 107);
+            button1.Name = "button1";
+            button1.Size = new Size(52, 23);
+            button1.TabIndex = 26;
+            button1.Text = "White";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.ForeColor = Color.Black;
+            button2.Location = new Point(56, 107);
+            button2.Name = "button2";
+            button2.Size = new Size(47, 23);
+            button2.TabIndex = 25;
+            button2.Text = "Black";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click_1;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(8, 115);
+            label5.Name = "label5";
+            label5.Size = new Size(42, 15);
+            label5.TabIndex = 24;
+            label5.Text = "Color :";
             // 
             // Form2
             // 
@@ -292,5 +330,8 @@
         private Button Plustext_btn;
         private Button negativetxt_btn;
         private GroupBox groupBox1;
+        private Button button1;
+        private Button button2;
+        private Label label5;
     }
 }

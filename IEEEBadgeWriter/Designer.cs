@@ -41,6 +41,10 @@ namespace IEEEBadgeWriter
                     Typeface = font,
                     TextAlign = SKTextAlign.Center
                 };
+                if (Form2.color == "white")
+                    paint.Color = SKColors.White;
+                else if (Form2.color == "black")
+                    paint.Color = SKColors.Black;
 
 
                 SKRect bounds = new SKRect();

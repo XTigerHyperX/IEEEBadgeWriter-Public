@@ -2,8 +2,11 @@ IEEEBadgeWriter is an automated software that writes names / text on a template 
 
 How it works:
 1 - add a template image
+
 2 - Load a text file with the names ( 1 name per line ) 
+
 3 - Choose ur output folder
+
 4 - Choose font & color etc
 
 
